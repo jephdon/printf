@@ -45,6 +45,11 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
+			else if (*fmt == 'd' || *fmt == 'i')
+			{
+				int num = va_arg(ap, int);
+				count += print_number(num);
+			}
 			else
 			{
 				_putchar('%');
